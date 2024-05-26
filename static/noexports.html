@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+    <div class="main-wrapper">
+
+        <div class="decription">
+            <p>You have No Downloadable Summary of Schedules</p>
+            <p>Please Reupload Files</p>
+        </div>
+
+        <div class="template-file-download-form-wrapper">
+            <form action="/downloadtemplatefile" method="get" enctype="text">
+                <input type="submit" value="Download Template Table">
+            </form>
+        </div>
+
+        <div class="files-upload-form-wrapper">
+    
+            <form action="/compile" method="post" enctype="multipart/form-data">
+                <input type="file" name="files" multiple required id="ïnputFiles">
+                <input type="submit" value="Compile Files">
+            </form>
+        </div>
+    
+        <div class="files-copmare-form-wrapper">
+            <div class="merge-description-wrapper">
+                <p>Merge Files</p>
+            </div>
+            
+            <form action="/compare" method="post" enctype="text">
+                <input type="submit" value="Merge">
+            </form>
+        </div>
+        
+        <div class="files-clearuploads-form-wrapper">
+            <div class="clear-uploads-description-wrapper">
+                <p>Clear Uploads From the Uploads Folder</p>
+            </div>
+            <form action="/clearuploads" method="post" enctype="text">
+                <input type="submit" value="Clear Uploads">
+            </form>
+        </div>
+        
+        <div class="files-clearuploads-form-wrapper">
+            <div class="clear-Exports-description-wrapper">
+                <p>Clear Exports From the Exports Folder</p>
+            </div>
+            <form action="/clearexports" method="post" enctype="text">
+                <input type="submit" value="Clear Exports">
+            </form>
+        </div>
+
+        <div class="more-info-wrapper">
+
+            <section class="accordion">
+
+                <div class="tab">
+                    <input type="checkbox" name="accordion-1" id="cb1" checked>
+                    <label for="cb1" class="tab__label">About</label>
+                    <div class="tab__content about">
+                        <p>
+                            The app allows management of multiple schedules that needs to be fit into
+                            one overall schedule without the hassle of double-checking and verification
+                            if there are any conflicting schedules. Thus, making multiple schedules into
+                            one easier and less time consuming.
+                        </p>                
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <input type="checkbox" name="accordion-1" id="cb2">
+                    <label for="cb2" class="tab__label">How to Use</label>
+                    <div class="tab__content">
+                        <p>
+                            - MS Excel documents are used to create the schedule. <br>
+                            - Any other document types will be ignored by the server. <br>
+                            - In case you have already clicked the Merge, Clear Uploads, or Clear Exports buttons, there will be no effect whatsoever on the server. <br>
+                            - Currently there is no support for custom tables. The template table is provided by clicking on the Download Template Table button. <br>
+                            - There may be instances where the Merge button causes the page to hang. A wrong table format may be used to upload. The correct table format is provided by the Download Template File button. The app can stil be used, however, it will not process that wrong table format. To reset, simply click the Clear Uploads button.<br>
+
+                            <br>
+                            <br>
+
+                            <em>Download Template File BUtton</em> <br>
+                            - Download the table template to be used to upload and merge. <br>
+
+                            <em>Choose Files Button </em> <br>
+                            - This is where you will provide the excel files where you want the schedules 
+                            to be merged. <br>
+                            - A number can be given to the files in order of their significance. This is to 
+                            set the order of priority for each table. <br>
+                            - The button will accept any file type but only the .xlsx file type will be 
+                            used. <br>
+                            - Can upload up to 100 files. Any more than 100 files will result in a notification to reduce number of files to be uploaded. <br>
+        
+                            <br>
+                            
+        
+                            <em>Compile Files Button</em> <br>
+                            - This will send the files in queue for merging. <br>
+                            - This does not merge the files, it simply 'packs' the files. <br>
+                            - After compiling the files, you can then merge the files through the Merge button. <br>
+        
+                            <br>
+                            
+        
+                            <em>Merge Button</em> <br>
+                            - This will merge the files in queue for merging. <br>
+                            - After merging, you will be sent to a page where the merge is successful or not.
+                            The pages will also display the merged/invalid files to be downloaded. <br>
+                            
+
+                            <br>
+                            
+        
+                            <em>Clear Uploads</em> <br>
+                            - This will clear the files in the 'uploads' queue. <br>
+                            - After merging the files, this is a prerequisite for another merge of files as 
+                            all the files in the uploads queue will be removed. <br>
+        
+                            <br>
+        
+                            <em>Clear Exports</em> <br>
+                            - This will clear the files in the 'exports' queue. <br>
+                            - After merging the files, files in the exports queue will be stored in case for 
+                            downloading the past merged files. <br>
+        
+                            <br>
+                        
+                            <em>Summary Pages</em> <br>
+                            - These are pages that will show the downloadable files. These files can either invalid schedules (or conflicting schedules) or merged files (or no conflicting schedules). <br>
+                            - There may be instances where downloadable files are not available because there are no such files. <br>
+                            - You may have accidentally clicked the Clear Exports button which is likely the cause. <br>
+
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+
+        </div>
+
+    </div>
+
+    
+</body>
+</html>
